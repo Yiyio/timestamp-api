@@ -1,0 +1,24 @@
+{
+  "name": "timestamp-api",
+  "version": "1.0.0",
+  "description": "An API that returns either a unix timestamp or a natural language date\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[A\u001b[B\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[B\u001b[B\u001b[D\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cboth\u001b[C\u001b[\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001band a natural language date when you pass either as a parameter.",
+  "main": "\u001b[:",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yiyio/timestamp-api.git"
+  },
+  "author": "Yiyio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yiyio/timestamp-api/issues"
+  },
+  "homepage": "https://github.com/Yiyio/timestamp-api#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}
