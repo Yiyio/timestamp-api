@@ -10,30 +10,39 @@ var monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 
-app.get('/:url', function(req,res){
-     console.log(req.url.substr(1))
+app.get('/:url', function(req, res) {
+  console.log(req.url.substr(1))
 
-     myUrl = req.url
+  myUrl = req.url
 
-     if(myUrl.indexOf("%") != -1){
+  if (myUrl.indexOf("%") != -1) {
 
-       myUrl = myUrl.split("%20")
-       var date = new Date(myUrl)
-      var dateResponse = {unix: date.getTime(), natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}
+    myUrl = myUrl.split("%20")
+    var date = new Date(myUrl)
+    var dateResponse = {
+      unix: date.getTime(),
+      natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
+    }
 
-     } else {
+  } else {
 
 
-     var date = new Date(Number(req.url.substr(1)))
-     console.log(date)
+    var date = new Date(Number(req.url.substr(1)))
+    console.log(date)
 
-     if (date.getTime() > 0){
-         var dateResponse = {unix: date.getTime(), natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}
-     }
-   }
+    if (date.getTime() > 0) {
+      var dateResponse = {
+        unix: date.getTime(),
+        natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
+      }
+    } else {
+      var dateResponse = {
+        unix: null,
+        natural: null}
+  }
 
-     res.end(JSON.stringify(dateResponse))
+  res.end(JSON.stringify(dateResponse))
 })
 
 
-app.listen(3000)
+app.listen(process.argv.PORT || 3000)
