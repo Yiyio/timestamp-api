@@ -13,24 +13,28 @@ var monthNames = ["January", "February", "March", "April", "May", "June",
 app.get('/:url', function(req,res){
      console.log(req.url.substr(1))
 
-     myUrl = req.url
+     queryString = req.url
+     var dateResponse = {}
 
-     if(myUrl.indexOf("%") != -1){
+     if(queryString.indexOf("%") != -1){
 
-       myUrl = myUrl.split("%20")
-       var date = new Date(myUrl)
-      var dateResponse = {unix: date.getTime(), natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}
+       queryString = queryString.split("%20")
+       var date = new Date(queryString)
+       dateResponse.unix = date.getTime()
+       dateResponse.natural = monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
+
+     } else if (new Date(queryString) == "Invalid Date"){
+
+        dateResponse.unix = null;
+        dateResponse.natural = null;
 
      } else {
 
 
      var date = new Date(Number(req.url.substr(1)))
-     console.log(date)
-
-     if (date.getTime() > 0){
-         var dateResponse = {unix: date.getTime(), natural: monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}
+       dateResponse.unix = date.getTime()
+       dateResponse.natural = monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
      }
-   }
 
      res.end(JSON.stringify(dateResponse))
 })
